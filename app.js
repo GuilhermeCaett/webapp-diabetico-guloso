@@ -54,6 +54,7 @@ const icons = {
   users: `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3"/><path d="M3.5 19c.6-3 2.4-4.5 5.5-4.5s4.9 1.5 5.5 4.5M15 7.5a2.5 2.5 0 1 1 0 5M16 14.5c2.5.2 3.9 1.7 4.4 4.5"/></svg>`,
   spark: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3ZM19 16l.7 2.3L22 19l-2.3.7L19 22l-.7-2.3L16 19l2.3-.7L19 16Z"/></svg>`,
   arrow: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>`,
+  sun: `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>`,
 };
 
 const state = { category: "Todos" };
@@ -147,7 +148,9 @@ function renderHome() {
           <span class="brand-mark">${icons.leaf}</span>
           <span><strong>Diabético</strong> Guloso</span>
         </a>
-        <span class="nav-tag">Receitas inteligentes</span>
+        <a class="bonus-nav-btn" href="#bonus" aria-label="Bônus: Café da Manhã">
+          ⭐ Bônus
+        </a>
       </div>
     </header>
 
@@ -274,7 +277,7 @@ function renderRecipe(id) {
     <header class="site-header recipe-nav">
       <div class="container nav">
         <a class="back-link" href="#receitas">${icons.arrow} Voltar para receitas</a>
-        <a class="brand compact" href="#receitas"><span class="brand-mark">${icons.leaf}</span><span><strong>Diabético</strong> Guloso</span></a>
+        <a class="bonus-nav-btn" href="#bonus" aria-label="Bônus: Café da Manhã">⭐ Bônus</a>
       </div>
     </header>
 
@@ -344,10 +347,179 @@ function renderRecipe(id) {
   window.scrollTo({ top: 0, behavior: "instant" });
 }
 
+function bonusCard(recipe) {
+  return `
+    <a class="recipe-card bonus-card" href="#bonus-receita/${recipe.id}" aria-label="Abrir receita ${recipe.nome}">
+      <div class="card-image-wrap">
+        <img class="card-image" src="${recipe.foto}" alt="${recipe.nome}" loading="lazy" />
+        <span class="time-pill">${icons.clock}${recipe.tempo_preparo}</span>
+      </div>
+      <div class="card-copy">
+        <span class="card-category bonus-category">${icons.sun} Café da manhã</span>
+        <h3>${recipe.nome}</h3>
+        <span class="card-link">Ver receita <b>→</b></span>
+      </div>
+    </a>
+  `;
+}
+
+function renderBonus() {
+  app.innerHTML = `
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="#receitas" aria-label="Diabético Guloso - início">
+          <span class="brand-mark">${icons.leaf}</span>
+          <span><strong>Diabético</strong> Guloso</span>
+        </a>
+        <a class="bonus-nav-btn bonus-nav-btn--active" href="#bonus" aria-label="Bônus: Café da Manhã">
+          ⭐ Bônus
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="bonus-hero">
+        <div class="container bonus-hero-content">
+          <p class="eyebrow bonus-eyebrow">${icons.spark} Conteúdo exclusivo para você</p>
+          <div class="bonus-badge">BÔNUS</div>
+          <h1>10 Receitas de Café da Manhã para Diabéticos</h1>
+          <p>Comece o dia com energia, sabor e glicemia sob controle. Receitas práticas pensadas para a refeição mais importante do seu dia.</p>
+          <div class="bonus-hero-stats">
+            <span>${icons.sun}<strong>10</strong> receitas</span>
+            <span>${icons.clock}<strong>5–15 min</strong> de preparo</span>
+            <span>${icons.spark}<strong>0</strong> açúcar</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog container bonus-catalog" aria-label="Receitas bônus de café da manhã">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Seu bônus exclusivo</p>
+            <h2>Café da manhã que adoça sem culpa</h2>
+          </div>
+          <span id="result-count">10 receitas</span>
+        </div>
+
+        <div class="recipe-grid">
+          ${window.BONUS_RECIPES.map((recipe) => bonusCard(recipe)).join("")}
+        </div>
+      </section>
+
+      <section class="care-note">
+        <div class="container care-note-inner">
+          <span class="brand-mark">${icons.leaf}</span>
+          <div>
+            <h2>Uma escolha consciente de cada vez.</h2>
+            <p>As receitas priorizam ingredientes com menor impacto glicêmico. Ajuste as porções à orientação do seu profissional de saúde.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <a class="brand" href="#receitas"><span class="brand-mark">${icons.leaf}</span><span><strong>Diabético</strong> Guloso</span></a>
+        <p>Receitas gostosas para uma rotina mais leve.</p>
+      </div>
+    </footer>
+  `;
+
+  window.scrollTo({ top: 0, behavior: "instant" });
+}
+
+function renderBonusRecipe(id) {
+  const recipe = window.BONUS_RECIPES.find((item) => item.id === Number(id));
+  if (!recipe) {
+    location.hash = "#bonus";
+    return;
+  }
+
+  const related = window.BONUS_RECIPES
+    .filter((item) => item.id !== recipe.id)
+    .slice(0, 3);
+
+  app.innerHTML = `
+    <header class="site-header recipe-nav">
+      <div class="container nav">
+        <a class="back-link" href="#bonus">${icons.arrow} Voltar para o bônus</a>
+        <a class="bonus-nav-btn bonus-nav-btn--active" href="#bonus">⭐ Bônus</a>
+      </div>
+    </header>
+
+    <main class="recipe-page">
+      <section class="recipe-hero bonus-recipe-hero">
+        <img src="${recipe.foto}" alt="${recipe.nome}" />
+        <div class="recipe-hero-overlay bonus-recipe-overlay"></div>
+        <div class="container recipe-title">
+          <span class="recipe-label bonus-recipe-label">${icons.sun} Café da manhã · Bônus Exclusivo</span>
+          <h1>${recipe.nome}</h1>
+        </div>
+      </section>
+
+      <div class="container recipe-body">
+        <div class="metadata">
+          <div>${icons.clock}<span><small>Preparo</small><strong>${recipe.tempo_preparo}</strong></span></div>
+          <div>${icons.spark}<span><small>Dificuldade</small><strong>${recipe.dificuldade}</strong></span></div>
+          <div>${icons.users}<span><small>Rendimento</small><strong>${recipe.porcoes} porção${recipe.porcoes > 1 ? "ões" : ""}</strong></span></div>
+        </div>
+
+        <div class="recipe-columns">
+          <section class="recipe-section ingredients">
+            <p class="eyebrow">Separe tudo antes de começar</p>
+            <h2>Ingredientes</h2>
+            <ul>
+              ${recipe.ingredientes.map((item) => `<li><span>✓</span>${item}</li>`).join("")}
+            </ul>
+          </section>
+
+          <section class="recipe-section preparation">
+            <p class="eyebrow">Agora é só preparar</p>
+            <h2>Modo de preparo</h2>
+            <ol>
+              ${recipe.modo_preparo.map((step) => `<li><span>${step}</span></li>`).join("")}
+            </ol>
+          </section>
+        </div>
+
+        <section class="tip-box bonus-tip-box">
+          <span class="tip-icon bonus-tip-icon">${icons.sun}</span>
+          <div>
+            <p class="eyebrow bonus-eyebrow-small">Dica Diabético Guloso</p>
+            <h2>Por que é uma escolha mais equilibrada?</h2>
+            <p>${recipe.dica}</p>
+          </div>
+        </section>
+
+        <p class="disclaimer">Cada organismo reage de um jeito. Monitore sua glicemia e siga as orientações do seu médico ou nutricionista.</p>
+
+        <a class="primary-button bonus-back-button" href="#bonus">${icons.arrow} Voltar para o bônus</a>
+
+        <section class="related">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Continue explorando</p>
+              <h2>Mais cafés da manhã</h2>
+            </div>
+          </div>
+          <div class="recipe-grid">
+            ${related.map((item) => bonusCard(item)).join("")}
+          </div>
+        </section>
+      </div>
+    </main>
+  `;
+
+  window.scrollTo({ top: 0, behavior: "instant" });
+}
+
 function route() {
-  const match = location.hash.match(/^#receita\/(\d+)$/);
-  if (match) renderRecipe(match[1]);
+  const matchRecipe = location.hash.match(/^#receita\/(\d+)$/);
+  const matchBonus = location.hash.match(/^#bonus-receita\/(\d+)$/);
+  if (matchRecipe) renderRecipe(matchRecipe[1]);
+  else if (matchBonus) renderBonusRecipe(matchBonus[1]);
   else if (location.hash === "#receitas") renderHome();
+  else if (location.hash === "#bonus") renderBonus();
   else renderWelcome();
 }
 
