@@ -5,7 +5,7 @@ window.BONUS_RECIPES = [
     "tempo_preparo": "15 min",
     "dificuldade": "Easy",
     "porcoes": 2,
-    "foto": "../images/recipes/panqueca.jpg",
+    "foto": "/images/recipes/panqueca.jpg",
     "ingredientes": [
       "1 medium underripe banana",
       "2 eggs",
@@ -30,7 +30,7 @@ window.BONUS_RECIPES = [
     "tempo_preparo": "10 min",
     "dificuldade": "Easy",
     "porcoes": 1,
-    "foto": "../images/recipes/omelete.jpg",
+    "foto": "/images/recipes/omelete.jpg",
     "ingredientes": [
       "3 eggs",
       "¼ onion, diced",
@@ -55,7 +55,7 @@ window.BONUS_RECIPES = [
     "tempo_preparo": "5 min",
     "dificuldade": "Easy",
     "porcoes": 1,
-    "foto": "../images/recipes/iogurete.jpg",
+    "foto": "/images/recipes/iogurete.jpg",
     "ingredientes": [
       "200g (7 oz) plain whole-milk Greek yogurt",
       "3 tablespoons sugar-free granola",
@@ -78,7 +78,7 @@ window.BONUS_RECIPES = [
     "tempo_preparo": "10 min",
     "dificuldade": "Easy",
     "porcoes": 1,
-    "foto": "../images/recipes/crepioca.jpg",
+    "foto": "/images/recipes/crepioca.jpg",
     "ingredientes": [
       "1 egg",
       "2 tablespoons tapioca flour (hydrated)",
@@ -101,7 +101,7 @@ window.BONUS_RECIPES = [
     "tempo_preparo": "10 min",
     "dificuldade": "Easy",
     "porcoes": 1,
-    "foto": "../images/recipes/mingau.jpg",
+    "foto": "/images/recipes/mingau.jpg",
     "ingredientes": [
       "½ cup thick rolled oats",
       "250ml (1 cup) skim milk or almond milk",
@@ -125,7 +125,7 @@ window.BONUS_RECIPES = [
     "tempo_preparo": "10 min",
     "dificuldade": "Easy",
     "porcoes": 1,
-    "foto": "../images/recipes/ovosabacate.jpg",
+    "foto": "/images/recipes/ovosabacate.jpg",
     "ingredientes": [
       "3 eggs",
       "½ ripe avocado",
@@ -150,7 +150,7 @@ window.BONUS_RECIPES = [
     "tempo_preparo": "10 min",
     "dificuldade": "Easy",
     "porcoes": 1,
-    "foto": "../images/recipes/smoothie.jpg",
+    "foto": "/images/recipes/smoothie.jpg",
     "ingredientes": [
       "1 cup frozen mixed berries (strawberry, blueberry, raspberry)",
       "100g (3.5 oz) plain Greek yogurt",
@@ -173,7 +173,7 @@ window.BONUS_RECIPES = [
     "tempo_preparo": "5 min",
     "dificuldade": "Easy",
     "porcoes": 1,
-    "foto": "../images/recipes/torradabanana.jpg",
+    "foto": "/images/recipes/torradabanana.jpg",
     "ingredientes": [
       "2 slices seeded whole grain bread",
       "2 tablespoons natural peanut butter (no added sugar)",
@@ -194,7 +194,7 @@ window.BONUS_RECIPES = [
     "tempo_preparo": "12 min",
     "dificuldade": "Medium",
     "porcoes": 1,
-    "foto": "../images/recipes/ovoespinafre.jpg",
+    "foto": "/images/recipes/ovoespinafre.jpg",
     "ingredientes": [
       "2 fresh eggs",
       "100g (3.5 oz) fresh spinach",
@@ -219,7 +219,7 @@ window.BONUS_RECIPES = [
     "tempo_preparo": "5 min",
     "dificuldade": "Easy",
     "porcoes": 1,
-    "foto": "../images/recipes/vitaminaverde.jpg",
+    "foto": "/images/recipes/vitaminaverde.jpg",
     "ingredientes": [
       "½ avocado",
       "1 cup fresh spinach",
