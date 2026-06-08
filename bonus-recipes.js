@@ -5,7 +5,7 @@ window.BONUS_RECIPES = [
     "tempo_preparo": "15 min",
     "dificuldade": "Fácil",
     "porcoes": 2,
-    "foto": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=720&q=78",
+    "foto": "./images/recipes/panqueca.jpg",
     "ingredientes": [
       "1 banana média menos madura",
       "2 ovos",
@@ -30,7 +30,7 @@ window.BONUS_RECIPES = [
     "tempo_preparo": "10 min",
     "dificuldade": "Fácil",
     "porcoes": 1,
-    "foto": "https://images.unsplash.com/photo-1510693206972-df098062cb71?auto=format&fit=crop&w=720&q=78",
+    "foto": "./images/recipes/omelete.jpg",
     "ingredientes": [
       "3 ovos",
       "1/4 de cebola picada",
@@ -55,7 +55,7 @@ window.BONUS_RECIPES = [
     "tempo_preparo": "5 min",
     "dificuldade": "Fácil",
     "porcoes": 1,
-    "foto": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=720&q=78",
+    "foto": "./images/recipes/iogurete.jpg",
     "ingredientes": [
       "200g de iogurte grego natural integral",
       "3 colheres de sopa de granola sem açúcar",
@@ -78,7 +78,7 @@ window.BONUS_RECIPES = [
     "tempo_preparo": "10 min",
     "dificuldade": "Fácil",
     "porcoes": 1,
-    "foto": "https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?auto=format&fit=crop&w=720&q=78",
+    "foto": "./images/recipes/crepioca.jpg",
     "ingredientes": [
       "1 ovo",
       "2 colheres de sopa de tapioca (goma hidratada)",
@@ -101,7 +101,7 @@ window.BONUS_RECIPES = [
     "tempo_preparo": "10 min",
     "dificuldade": "Fácil",
     "porcoes": 1,
-    "foto": "https://images.unsplash.com/photo-1517578239113-b03992dcdd25?auto=format&fit=crop&w=720&q=78",
+    "foto": "./images/recipes/mingau.jpg",
     "ingredientes": [
       "1/2 xícara de aveia em flocos grossos",
       "250ml de leite desnatado ou leite de amêndoa",
@@ -125,7 +125,7 @@ window.BONUS_RECIPES = [
     "tempo_preparo": "10 min",
     "dificuldade": "Fácil",
     "porcoes": 1,
-    "foto": "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=720&q=78",
+    "foto": "./images/recipes/ovosabacate.jpg",
     "ingredientes": [
       "3 ovos",
       "1/2 abacate maduro",
@@ -150,7 +150,7 @@ window.BONUS_RECIPES = [
     "tempo_preparo": "10 min",
     "dificuldade": "Fácil",
     "porcoes": 1,
-    "foto": "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?auto=format&fit=crop&w=720&q=78",
+    "foto": "./images/recipes/smoothie.jpg",
     "ingredientes": [
       "1 xícara de frutas vermelhas congeladas (morango, mirtilo, framboesa)",
       "100g de iogurte grego natural",
@@ -173,7 +173,7 @@ window.BONUS_RECIPES = [
     "tempo_preparo": "5 min",
     "dificuldade": "Fácil",
     "porcoes": 1,
-    "foto": "https://images.unsplash.com/photo-1549592736-65c1571d3b6c?auto=format&fit=crop&w=720&q=78",
+    "foto": "./images/recipes/torradabanana.jpg",
     "ingredientes": [
       "2 fatias de pão integral com sementes",
       "2 colheres de sopa de pasta de amendoim integral sem açúcar",
@@ -194,7 +194,7 @@ window.BONUS_RECIPES = [
     "tempo_preparo": "12 min",
     "dificuldade": "Médio",
     "porcoes": 1,
-    "foto": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=720&q=78",
+    "foto": "./images/recipes/ovoespinafre.jpg",
     "ingredientes": [
       "2 ovos frescos",
       "100g de espinafre fresco",
@@ -219,7 +219,7 @@ window.BONUS_RECIPES = [
     "tempo_preparo": "5 min",
     "dificuldade": "Fácil",
     "porcoes": 1,
-    "foto": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=720&q=78",
+    "foto": "./images/recipes/vitaminaverde.jpg",
     "ingredientes": [
       "1/2 abacate",
       "1 xícara de espinafre fresco",
