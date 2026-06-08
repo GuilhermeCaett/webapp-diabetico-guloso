@@ -168,6 +168,24 @@ function renderHome() {
         </div>
       </section>
 
+      <section class="bonus-banner">
+        <div class="container bonus-banner-inner">
+          <div class="bonus-banner-text">
+            <span class="bonus-banner-tag">⭐ BÔNUS EXCLUSIVO</span>
+            <h2>Café da Manhã para Diabéticos</h2>
+            <p>10 receitas práticas e deliciosas para começar o dia com energia e a glicemia sob controle.</p>
+          </div>
+          <a class="bonus-banner-btn" href="#bonus">
+            <span class="bonus-banner-btn-icon">☀️</span>
+            <span>
+              <strong>Ver as receitas de café da manhã</strong>
+              <small>Toque aqui para acessar o bônus</small>
+            </span>
+            <span class="bonus-banner-arrow">→</span>
+          </a>
+        </div>
+      </section>
+
       <section class="catalog container" aria-label="Catálogo de receitas">
         <div class="section-heading">
           <div>
@@ -327,7 +345,7 @@ function renderRecipe(id) {
 
         <p class="disclaimer">Cada organismo reage de um jeito. Monitore sua glicemia e siga as orientações do seu médico ou nutricionista.</p>
 
-        <a class="primary-button" href="#receitas">${icons.arrow} Voltar para receitas</a>
+        <a class="back-big-btn" href="#receitas">${icons.arrow} Voltar para as receitas</a>
 
         <section class="related">
           <div class="section-heading">
@@ -391,6 +409,10 @@ function renderBonus() {
           </div>
         </div>
       </section>
+
+      <div class="container">
+        <a class="back-big-btn back-big-btn--outline" href="#receitas">${icons.arrow} Voltar para as receitas principais</a>
+      </div>
 
       <section class="catalog container bonus-catalog" aria-label="Receitas bônus de café da manhã">
         <div class="section-heading">
@@ -493,7 +515,7 @@ function renderBonusRecipe(id) {
 
         <p class="disclaimer">Cada organismo reage de um jeito. Monitore sua glicemia e siga as orientações do seu médico ou nutricionista.</p>
 
-        <a class="primary-button bonus-back-button" href="#bonus">${icons.arrow} Voltar para o bônus</a>
+        <a class="back-big-btn" href="#bonus" style="background:var(--amber-500);color:var(--amber-900);">${icons.arrow} Voltar para o café da manhã</a>
 
         <section class="related">
           <div class="section-heading">
